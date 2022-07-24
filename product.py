@@ -1,9 +1,12 @@
 class Product:
     
-    def __init__(self, name, price, qty):
+    discount_percentage = 0
+
+    def __init__(self, name, price):
         self.name = name
         self.price = price
-        self.qty = qty
 
-    def apply_discount(self, percentage):
-        self.price -= (self.price * percentage) / 100
+    def apply_discount(self):
+        if (self.discount_percentage > 0):
+            self.price -= (self.price * self.discount_percentage) / 100
+            return 
